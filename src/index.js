@@ -4,7 +4,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store/store";
 import App from "./App";
-import "antd/dist/antd.css";
+import "antd/dist/antd.min.css";
 
 // STEP 2 to REDUX
 // pass the store variable to Provider and wrap App -> services/cryptoApi

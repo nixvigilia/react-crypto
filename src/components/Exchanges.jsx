@@ -1,5 +1,5 @@
 import React from "react";
-import { Collapse, Row, Col, Typography, Avatar } from "antd";
+import { Row, Col } from "antd";
 
 const Exchanges = () => {
   return (
