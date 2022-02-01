@@ -1,6 +1,15 @@
 import React from "react";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+} from "chart.js";
 import { Line } from "react-chartjs-2";
 import { Col, Row, Typography } from "antd";
+
+ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement);
 
 const { Title } = Typography;
 
@@ -8,15 +17,23 @@ const LineChart = ({ coinHistory, currentPrice, coinName }) => {
   const coinPrice = [];
   const coinTimestamp = [];
 
+  // console.log(coinHistory);
+
+  // loop until the end of the coin history
+  // and push one by one to coinPrice array
   for (let i = 0; i < coinHistory?.data?.history?.length; i += 1) {
     coinPrice.push(coinHistory?.data?.history[i].price);
-  }
-
-  for (let i = 0; i < coinHistory?.data?.history?.length; i += 1) {
     coinTimestamp.push(
       new Date(coinHistory?.data?.history[i].timestamp).toLocaleDateString()
     );
   }
+
+  // for (let i = 0; i < coinHistory?.data?.history?.length; i += 1) {
+  //   coinTimestamp.push(
+  //     new Date(coinHistory?.data?.history[i].timestamp).toLocaleDateString()
+  //   );
+  // }
+
   const data = {
     labels: coinTimestamp,
     datasets: [

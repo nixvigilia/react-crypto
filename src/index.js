@@ -9,10 +9,12 @@ import "antd/dist/antd.css";
 // STEP 2 to REDUX
 // pass the store variable to Provider and wrap App -> services/cryptoApi
 ReactDOM.render(
-  <Router>
-    <Provider store={store}>
-      <App />
-    </Provider>
-  </Router>,
+  <React.StrictMode>
+    <Router>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </Router>
+  </React.StrictMode>,
   document.getElementById("root")
 );
